@@ -10,8 +10,8 @@ def on_square_clicked(x, y):
 
 # Initialize the board with pieces
 board = [[None for _ in range(8)] for _ in range(8)]
-board[0][0] = Rook("black")
-board[0][1] = Knight("black")
+# board[0][0] = Rook("black")
+# board[0][1] = Knight("black")
 # ... Initialize the rest of the board
 
 # Tkinter GUI code to create the board and bind click events
@@ -45,7 +45,7 @@ def main():
     # Initialize the board with pieces
     board_data = [[None for _ in range(8)] for _ in range(8)]
     board_data[0][0] = Rook("black")
-    board_data[0][1] = Knight("black")
+    # board_data[0][1] = Knight("black")
     board_data[0][2] = Bishop("black")
     # board_data[0][2] = Bishop("black")
     # board_data[0][2] = Bishop("black")

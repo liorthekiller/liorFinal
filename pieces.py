@@ -19,31 +19,31 @@ class Pawn(ChessPiece):
 
 # Similarly, create classes for Rook, Knight, Bishop, Queen, King
 
-class Pawn(ChessPiece):
-    def __init__(self, color):
-        super().__init__(color)
-
-
-
-    def valid_moves(self, board, x, y):
-        direction = 1 if self.color == "white" else -1
-        start_row = 1 if self.color == "white" else 6
-        valid_moves = []
-
-        # Forward move
-        if board[x + direction][y] is None:
-            valid_moves.append((x + direction, y))
-            # Double move on first move
-            if x == start_row and board[x + 2 * direction][y] is None:
-                valid_moves.append((x + 2 * direction, y))
-
-        # Diagonal captures
-        for dy in [-1, 1]:
-            if 0 <= y + dy < 8 and board[x + direction][y + dy] is not None:
-                if board[x + direction][y + dy].color != self.color:
-                    valid_moves.append((x + direction, y + dy))
-
-        return valid_moves
+# class Pawn(ChessPiece):
+#     def __init__(self, color):
+#         super().__init__(color)
+#
+#
+#
+#     def valid_moves(self, board, x, y):
+#         direction = 1 if self.color == "white" else -1
+#         start_row = 1 if self.color == "white" else 6
+#         valid_moves = []
+#
+#         # Forward move
+#         if board[x + direction][y] is None:
+#             valid_moves.append((x + direction, y))
+#             # Double move on first move
+#             if x == start_row and board[x + 2 * direction][y] is None:
+#                 valid_moves.append((x + 2 * direction, y))
+#
+#         # Diagonal captures
+#         for dy in [-1, 1]:
+#             if 0 <= y + dy < 8 and board[x + direction][y + dy] is not None:
+#                 if board[x + direction][y + dy].color != self.color:
+#                     valid_moves.append((x + direction, y + dy))
+#
+#         return valid_moves
 
 
 
@@ -75,6 +75,10 @@ class Knight(ChessPiece):
 class Rook(ChessPiece):
     def __init__(self, color):
         super().__init__(color)
+        super().__init__(color)
+        image_path = 'sprites/b.rook.png'  # Use the correct path for the bishop image
+        image = Image.open(image_path)
+        self.image = ImageTk.PhotoImage(image)
 
     def valid_moves(self, board, x, y):
         valid_moves = []
