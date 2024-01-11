@@ -178,4 +178,3 @@ class King(ChessPiece):
                     valid_moves.append((mx, my))
 
         return valid_moves
-

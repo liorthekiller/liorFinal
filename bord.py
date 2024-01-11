@@ -90,7 +90,7 @@ class Chessboard(tk.Tk):
         print(valids)
         for x, y in valids:
             color = "light blue"
-            self.canvas.create_rectangle(x, y, x + 50, y + 50, fill=color)
+            self.canvas.create_rectangle(x*50, y*50, x*50 + 50, y*50 + 50, fill=color)
 
 
 if __name__ == "__main__":
